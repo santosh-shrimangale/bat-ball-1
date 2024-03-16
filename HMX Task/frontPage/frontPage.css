@@ -1,0 +1,116 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+body{
+    background-color: #5372ef;
+}
+.nav{
+  height: 90px;
+  background-color: #000;
+
+}
+.logo{
+  margin-top: 10px;
+}
+.heading{
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-weight: 700;
+    font-family: "Poppins",sans-serif;
+    margin-top: 5%;
+    font-style: oblique;
+
+}
+.ballBat{
+ color: black;
+}
+.main-div{
+  width: 90%;
+  max-width: 37.5em;
+  background-color: #ffffff;
+  padding: 3em 0.5em;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 0.8em;
+}
+.imgs{
+    height: 50px;
+    width: 70px;
+    transform: rotate(-0.5turn);
+}
+
+
+  /* button css */
+  .startBtn {
+    align-items: center;
+    appearance: none;
+    background-color: #fcfcfd;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395a;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+  }
+  
+  .startBtn:focus {
+    box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  }
+  
+  .startBtn:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  .startBtn:active {
+    box-shadow: #d6d6e7 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+  /* Input css */
+  .input {
+    width: 30%;
+    height: 43px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background: #000;
+  }
+  .input,
+  placeholder {
+    font-style: italic;
+    font-size: 15px;
+  }
+  .input,
+  text {
+    color: white;
+  }
+  

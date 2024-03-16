@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="frontPage.css" />
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  </head>
+  <body>  
+    <!-- <script src="/gamePage/ball&bat.js"></script> -->
+    <div class="nav">
+        <img class="logo" src="HMXLOGO.png" alt="">
+    </div>
+
+    <div class="heading"><span class="ballBat">Ball</span> & <span class="ballBat"> Bat</span> Game</div>
+
+    <div class="main-div">
+      <input
+        type="text"
+        class="input"
+        id="username"
+        placeholder="Please enter your Name"
+        title="Please enter your Name"/>
+
+      <button class="startBtn" role="button" onclick="myFun();displayName();play()">Start</button>
+      <button class="restart">Restart</button>
+
+      <img src="arrow.webp" class="imgs" alt="img">
+
+    </div>
+    <h1 id="welcometext" class="welcometext"></h1>
+    <div class="myCanvas">
+      <canvas width="690" height="480" id="myCanvas"></canvas>
+    </div>
+    </div>
+  </body>
+
+  <script>
+    const myFun=()=>{
+      window.location.href='../gamePage/ball&bat.html';
+      
+    }
+    const displayName=()=> {
+    console.log("fffffff")
+    $('#welcomemsg').hide();
+    $('#displayName').show('slow');
+    let username = $("#username").val();
+    $('#welcometext').text(`Welcome ${username} and good luck!`);
+    $('#welcomemsg').hide();
+}
+
+const play = () => {
+    // alert("clicked");
+    if (typeof (Storage) !== "undefined") {
+        if (localStorage.highScore == undefined) {
+            localStorage.highScore = 0;
+        }
+        highScore = localStorage.highScore;
+    } else {
+        highScore = 0;
+    }
+
+    stage = new createjs.Stage("myCanvas");
+    createjs.Touch.enable(stage);
+    createPaddle();
+    createBall();
+    createBrickGrid('#FFF');
+    createScoreText();
+    stage.canvas.height = window.innerHeight;
+    createjs.Ticker.setFPS(60);
+    createjs.Ticker.addEventListener("tick", tick); //Changed to tick from stage
+
+    stage.on("stagemousedown", function (event) {
+        startLevel();
+    });
+
+    stage.on("stagemousemove", function (event) {
+        paddle.x = stage.mouseX;
+    });
+
+    //keyboard handlers
+    window.onkeyup = keyUpHandler;
+    window.onkeydown = keyDownHandler;
+}
+
+  </script>
+
+</html>
